@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiEscuela.App">
+	<Application.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="Azul">#8d6e05</Color>
+            <Color x:Key="Verde">#c7a945</Color>
+            <Color x:Key="Naranja">#ead07a</Color>
+
+            <Style x:Key="btnAceptar" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Verde}"/>
+                <Setter Property="Text" Value="Aceptar"/>
+            </Style>
+
+            <Style x:Key="btnGuardar" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Azul}"/>
+                <Setter Property="Text" Value="Guardar"/>
+            </Style>
+
+            <Style x:Key="btnEliminar" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Naranja}"/>
+                <Setter Property="Text" Value="Eliminar"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

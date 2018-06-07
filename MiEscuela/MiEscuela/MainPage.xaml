@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MiEscuela"
+             x:Class="MiEscuela.MainPage">
+    <ScrollView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Margin="5" Source="escuela.jpg"/>
+
+        <StackLayout Grid.Row="1">
+            <Label HorizontalOptions="Center" Text="Usuario"/>
+            <Entry x:Name="txbUsuario" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Placeholder="Ingrese Su Correo" Keyboard="Email"/>
+
+            <Label HorizontalOptions="Center" Text="Contraseña"/>
+            <Entry x:Name="pssClave" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Placeholder="Ingrese Su Contraseña" IsPassword="True"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="2">
+            <Button Style="{StaticResource btnAceptar}" Text="Iniciar Sesión" x:Name="btnIniciarSesion"/>
+            <Button Style="{StaticResource btnGuardar}" Text="Crear Cuenta" x:Name="btnCrearCuenta"/>
+        </StackLayout>
+    </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiEscuela.Vistas.ViewTarea"
+             Title="{Binding Source={x:Reference Name=txbTitulo}, Path=Text}">
+    <ContentPage.Content>
+        <Grid x:Name="contenedor">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Titulo" Grid.Column="0" Grid.Row="0"/>
+            <Label Text="Fecha de Entrega" Grid.Column="0" Grid.Row="1"/>
+            <Label Text="Listo" Grid.Column="0" Grid.Row="2"/>
+            <Label Text="¿Urgente?" Grid.Column="0" Grid.Row="3"/>
+
+            <Entry x:Name="txbTitulo" Text="{Binding Titulo}" Grid.Column="1" Grid.Row="0"/>
+            <DatePicker Date="{Binding FechaEntrega}" Grid.Column="1" Grid.Row="1"/>
+
+            <Switch IsToggled="{Binding Entregada}" Grid.Column="1" Grid.Row="2"/>
+            <Switch IsToggled="{Binding Prioridad}" Grid.Column="1" Grid.Row="3"/>
+
+            <Entry Text="{Binding Descripcion}" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"/>
+
+            <Button Style="{StaticResource btnGuardar}" x:Name="btnGuardar" Grid.Column="0" Grid.Row="5"/>
+            <Button Style="{StaticResource btnEliminar}" x:Name="btnEliminar" Grid.Column="1" Grid.Row="5"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

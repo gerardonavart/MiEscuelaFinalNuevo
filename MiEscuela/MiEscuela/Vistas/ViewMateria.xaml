@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiEscuela.Vistas.ViewMateria"
+             Title="{Binding Source={x:Reference Name=txbMateria}, Path=Text}">
+    <ContentPage.Content>
+        <Grid x:Name="contenedor">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Nombre" Grid.Column="0" Grid.Row="0"/>
+            <Label Text="Profesor" Grid.Column="0" Grid.Row="1"/>
+            <Label Text="Horario" Grid.Column="0" Grid.Row="2"/>
+            <Label Text="Tareas" Grid.Column="0" Grid.Row="3"/>
+
+            <Entry x:Name="txbMateria" Text="{Binding Nombre}" Grid.Column="1" Grid.Row="0"/>
+            <Entry Text="{Binding Profesor}" Grid.Column="1" Grid.Row="1"/>
+            <Entry Text="{Binding Horario}" Grid.Column="1" Grid.Row="2"/>
+
+            <Button Style="{StaticResource btnAceptar}" x:Name="btnAgregarTarea" Grid.Column="1" Grid.Row="3" Text="Agregar"/>
+
+            <ListView x:Name="lstTareas" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"/>
+
+            <Button Style="{StaticResource btnGuardar}" x:Name="btnGuardar" Grid.Column="0" Grid.Row="5"/>
+            <Button Style="{StaticResource btnEliminar}" x:Name="btnEliminar" Grid.Column="1" Grid.Row="5"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
