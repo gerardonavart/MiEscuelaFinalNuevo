@@ -16,6 +16,7 @@ namespace MiEscuela.DAL
         public GenericRepository()
         {
             //client = new MongoClient(new MongoUrl(@"mongodb://admin:erikomar17@ds151530.mlab.com:51530/miescuela")); db = client.GetDatabase("miescuela");
+            //client = new MongoClient(new MongoUrl(@"mongodb://admin:admin123@ds016058.mlab.com:16058/pruebadb")); db = client.GetDatabase("pruebadb");
             client = new MongoClient(new MongoUrl(@"mongodb://admin:admin123@ds151180.mlab.com:51180/pruebaescuela")); db = client.GetDatabase("pruebaescuela");
         }
         private IMongoCollection<T> Collection()

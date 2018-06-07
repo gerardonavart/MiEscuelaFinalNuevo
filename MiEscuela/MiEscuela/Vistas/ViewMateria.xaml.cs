@@ -20,7 +20,10 @@ namespace MiEscuela.Vistas
         IMateriaManager materiaManager;
         bool nuevo;
         public int contar=0;
-		public ViewMateria (Materia m, bool n)
+        public int contar2;
+        decimal calif;
+        decimal calif2;
+        public ViewMateria (Materia m, bool n)
 		{
             materia = m;
             nuevo = n;
@@ -92,13 +95,26 @@ private void ViewMateria_Appering(object sender, EventArgs e)
             var datos= tareaManager.BuscarTareasDeMateria(materia.Id);
             lstTareas.ItemsSource = datos;
             contar = datos.Count(p=>!p.Entregada);
+            contar2 = datos.Count(); //d => !d.Entregada && d.Entregada
+            calif = datos.Sum(d => d.Calificacion);
+            //calif2 = (calif2 * 100) / contar2;
+            materia.CalificacionMateria = calif2;
             materia.contador = contar;
             if (contar >= 1)
             {
-                DisplayAlert("tines tareas", "por entregar" + contar + "", "OK");
+                DisplayAlert("Mi Escuela", "Tareas por entregar: " + contar , "OK");
             }
-           
-            
+            if (contar2 >=1)
+            {
+                calif2 = calif / contar2;
+            }
+            else
+            {
+                calif2 = calif / 1;
+            }
+            materia.CalificacionMateria = calif2;
+
+
         }
     }
 }

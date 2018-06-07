@@ -12,9 +12,10 @@ namespace MiEscuela.COMMON.Entidades
         public string Nombre { get; set; }
         public ObjectId IdUsuario { get; set; }
         public int contador { get; set; }
+        public decimal CalificacionMateria { get; set; }
         public override string ToString()
         {
-            return Nombre + ": " + Profesor;
+            return Nombre + ": " + Profesor + " Calificación: " + CalificacionMateria;
         }
     }
 }

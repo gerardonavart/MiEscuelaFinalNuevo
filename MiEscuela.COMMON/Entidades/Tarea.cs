@@ -13,6 +13,7 @@ namespace MiEscuela.COMMON.Entidades
         public bool Entregada { get; set; }
         public bool Prioridad { get; set; }
         public string Descripcion { get; set; }
+        public decimal Calificacion { get; set; }
         public ObjectId IdTarea { get; set; }
        
         public override string ToString()
@@ -39,7 +40,7 @@ namespace MiEscuela.COMMON.Entidades
                 urge = "Normal";
             }
             //return Titulo + ", Estado: " + ", Prioridad:" + urge;
-            return Titulo + "El Estado de la tarea es: " + entrega + ", Prioridad:" + urge ;
+            return Titulo + ", " + entrega + ", " + urge + ", " + Calificacion ;
         }
     }
 }
